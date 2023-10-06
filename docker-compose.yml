@@ -1,0 +1,12 @@
+version: '3'
+
+x-aws-vpc: "${AWS_VPC_ID}"
+
+services:
+  app:
+    container_name: demo-app
+    image: "${IMAGE_URI}"
+    build:
+      context: app
+    ports:
+      - "0.0.0.0:3000:3000"
